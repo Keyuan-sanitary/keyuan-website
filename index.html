@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -54,7 +54,6 @@ body {font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;color:var(
 .section-title {font-size:2rem;font-weight:700;color:var(--primary);letter-spacing:-0.02em}
 .section-desc {font-size:1rem;color:var(--text-secondary);max-width:560px;margin:12px auto 0}
 .products-notice {max-width:680px;margin:18px auto 0;padding:10px 20px;background:rgba(201,162,39,0.08);border-left:3px solid var(--accent);border-radius:0 var(--radius) var(--radius) 0;color:var(--primary-light);font-size:0.85rem;font-weight:500}
-
 
 /* ========== PRODUCTS ========== */
 .category-section {margin-bottom:56px}
@@ -153,9 +152,9 @@ body {font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;color:var(
                 <a href="#about" class="nav-link" data-i18n data-zh="关于我们" data-en="About" data-es="Nosotros">关于我们</a>
                 <a href="#contact" class="nav-link" data-i18n data-zh="联系" data-en="Contact" data-es="Contacto">联系</a>
                 <div class="lang-group">
-                    <button class="lang-btn active" onclick="switchLang('zh')" id="lZh">中文</button>
-                    <button class="lang-btn" onclick="switchLang('en')" id="lEn">EN</button>
+                    <button class="lang-btn active" onclick="switchLang('en')" id="lEn">EN</button>
                     <button class="lang-btn" onclick="switchLang('es')" id="lEs">ES</button>
+                    <button class="lang-btn" onclick="switchLang('zh')" id="lZh">中文</button>
                 </div>
             </div>
         </div>
@@ -594,7 +593,7 @@ body {font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;color:var(
 </footer>
 
 <script>
-let currentLang='zh';
+let currentLang='en';
 function switchLang(lang){
     currentLang=lang;
     document.documentElement.lang=lang==='zh'?'zh-CN':(lang==='es'?'es':'en');
@@ -613,7 +612,7 @@ function switchLang(lang){
     localStorage.setItem('keyuan-lang',lang);
 }
 const saved=localStorage.getItem('keyuan-lang');
-if(saved&&saved!=='zh')switchLang(saved);
+if(saved){switchLang(saved);}else{switchLang('en');}
 window.addEventListener('scroll',()=>{document.getElementById('nav').classList.toggle('scrolled',window.scrollY>40)});
 document.querySelectorAll('a[href^="#"]').forEach(a=>{
     a.addEventListener('click',function(e){
