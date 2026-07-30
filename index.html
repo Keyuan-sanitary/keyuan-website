@@ -1,625 +1,1250 @@
 <!DOCTYPE html>
+
 <html lang="en">
+
 <head>
+
 <meta charset="UTF-8">
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>KEYUAN | Professional Faucet Manufacturer Since 2007</title>
+
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
 <style>
+
 :root {
+
     --primary:#0f1a2e; --primary-light:#1a3050; --accent:#c9a227; --accent-hover:#d4af37;
+
     --bg:#fff; --bg-alt:#f3f4f7; --text:#1a1a2e; --text-secondary:#5a6072; --border:#e2e5ec;
+
     --shadow:0 4px 12px rgba(0,0,0,0.08); --shadow-lg:0 12px 40px rgba(0,0,0,0.12);
+
     --radius:12px; --radius-lg:16px; --transition:0.25s cubic-bezier(0.4,0,0.2,1);
+
 }
+
 * {margin:0;padding:0;box-sizing:border-box}
+
 html {scroll-behavior:smooth}
+
 body {font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;color:var(--text);line-height:1.7;-webkit-font-smoothing:antialiased}
 
+
+
 /* ========== NAV ========== */
+
 .nav {position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(255,255,255,0.92);backdrop-filter:blur(16px);border-bottom:1px solid transparent;transition:all var(--transition)}
+
 .nav.scrolled {border-bottom-color:var(--border);box-shadow:0 1px 8px rgba(0,0,0,0.06)}
+
 .nav-inner {max-width:1340px;margin:0 auto;padding:0 28px;display:flex;align-items:center;justify-content:space-between;height:64px}
+
 .nav-brand {display:flex;align-items:center;gap:10px;text-decoration:none;font-weight:700;font-size:1.1rem;color:var(--primary);letter-spacing:-0.02em}
+
 .nav-brand-icon {width:36px;height:36px;background:var(--primary);color:var(--accent);border-radius:8px;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:0.78rem}
+
 .nav-right {display:flex;align-items:center;gap:6px}
+
 .nav-link {text-decoration:none;color:var(--text-secondary);font-size:0.86rem;font-weight:500;padding:8px 14px;border-radius:8px;transition:all var(--transition)}
+
 .nav-link:hover {color:var(--primary);background:var(--bg-alt)}
+
 .lang-group {display:flex;background:var(--bg-alt);border-radius:24px;padding:3px;margin-left:12px}
+
 .lang-btn {border:none;background:transparent;padding:6px 14px;border-radius:22px;cursor:pointer;font-size:0.78rem;font-weight:600;color:var(--text-secondary);transition:all var(--transition)}
+
 .lang-btn.active {background:var(--primary);color:#fff;box-shadow:0 2px 8px rgba(15,26,46,0.25)}
+
 .nav-menu-btn {display:none;background:none;border:none;font-size:1.5rem;cursor:pointer;color:var(--text);padding:4px}
 
+
+
 /* ========== HERO ========== */
+
 .hero {min-height:100vh;display:flex;align-items:center;position:relative;overflow:hidden;background:linear-gradient(160deg,#060d1a 0%,#0f1a2e 40%,#152542 100%);padding-top:64px}
+
 .hero::after {content:'';position:absolute;top:-30%;right:-15%;width:700px;height:700px;background:radial-gradient(circle,rgba(201,162,39,0.08) 0%,transparent 70%);border-radius:50%}
+
 .hero-inner {max-width:1340px;margin:0 auto;padding:80px 28px 60px;display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;position:relative;z-index:1}
+
 .hero-text h1 {font-size:2.8rem;font-weight:800;color:#fff;line-height:1.15;letter-spacing:-0.03em;margin-bottom:18px}
+
 .hero-text h1 span {color:var(--accent);display:block;font-size:1.35rem;font-weight:600;margin-top:4px}
+
 .hero-text p {color:rgba(255,255,255,0.72);font-size:1.05rem;line-height:1.8;margin-bottom:28px;max-width:500px}
+
 .hero-badges {display:flex;gap:12px;flex-wrap:wrap;margin-bottom:32px}
+
 .hero-badge {display:flex;align-items:center;gap:8px;background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.12);padding:9px 18px;border-radius:30px;color:rgba(255,255,255,0.9);font-size:0.82rem;font-weight:500}
+
 .btn {display:inline-flex;align-items:center;gap:8px;padding:14px 30px;border-radius:10px;font-size:0.95rem;font-weight:600;text-decoration:none;transition:all var(--transition);cursor:pointer;border:none}
+
 .btn-accent {background:var(--accent);color:#0f1a2e}.btn-accent:hover {background:var(--accent-hover);transform:translateY(-2px)}
+
 .btn-ghost {background:transparent;color:#fff;border:2px solid rgba(255,255,255,0.25)}.btn-ghost:hover {border-color:rgba(255,255,255,0.5);background:rgba(255,255,255,0.05)}
+
 .hero-visual {position:relative;display:flex;align-items:center;justify-content:center}
+
 .hero-img {width:100%;max-width:520px;border-radius:16px;box-shadow:0 24px 60px rgba(0,0,0,0.4);border:3px solid rgba(255,255,255,0.08)}
 
+
+
 /* ========== SECTIONS ========== */
+
 .section {padding:80px 0}
+
 .section-alt {background:var(--bg-alt)}
+
 .container {max-width:1340px;margin:0 auto;padding:0 28px}
+
 .section-head {text-align:center;margin-bottom:48px}
+
 .section-badge {display:inline-block;padding:5px 16px;background:rgba(15,26,46,0.06);color:var(--primary-light);font-size:0.75rem;font-weight:700;border-radius:20px;letter-spacing:0.06em;text-transform:uppercase;margin-bottom:14px}
+
 .section-title {font-size:2rem;font-weight:700;color:var(--primary);letter-spacing:-0.02em}
+
 .section-desc {font-size:1rem;color:var(--text-secondary);max-width:560px;margin:12px auto 0}
+
 .products-notice {max-width:680px;margin:18px auto 0;padding:10px 20px;background:rgba(201,162,39,0.08);border-left:3px solid var(--accent);border-radius:0 var(--radius) var(--radius) 0;color:var(--primary-light);font-size:0.85rem;font-weight:500}
 
+
+
 /* ========== PRODUCTS ========== */
+
 .category-section {margin-bottom:56px}
+
 .category-section:last-child {margin-bottom:0}
+
 .category-label {display:flex;align-items:center;gap:16px;margin-bottom:28px}
+
 .category-label h3 {font-size:1.4rem;font-weight:700;color:var(--primary);letter-spacing:-0.02em}
+
 .category-label .line {flex:1;height:1px;background:var(--border)}
+
 .category-label .count {font-size:0.82rem;color:var(--text-secondary);font-weight:500;white-space:nowrap}
 
+
+
 .product-grid {display:flex;flex-wrap:wrap;justify-content:center;gap:20px}
+
 .product-card {flex:0 0 calc(25% - 15px);min-width:260px;max-width:300px;background:#fff;border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;transition:all var(--transition);display:flex;flex-direction:column}
+
 .product-card:hover {border-color:#c0c5d0;box-shadow:var(--shadow);transform:translateY(-3px)}
+
 .product-img-wrap {width:100%;height:240px;background:var(--bg-alt);display:flex;align-items:center;justify-content:center;overflow:hidden;padding:16px}
+
 .product-img-wrap img {max-width:100%;max-height:100%;object-fit:contain;transition:transform var(--transition)}
+
 .product-card:hover .product-img-wrap img {transform:scale(1.05)}
+
 .product-body {padding:20px 20px 22px;flex:1;display:flex;flex-direction:column}
+
 .product-model {display:inline-block;background:var(--primary);color:var(--accent);padding:3px 10px;border-radius:5px;font-size:0.7rem;font-weight:700;letter-spacing:0.04em;margin-bottom:8px;width:fit-content}
+
 .product-name {font-size:1rem;font-weight:700;color:var(--primary);margin-bottom:6px}
+
 .product-desc {color:var(--text-secondary);font-size:0.82rem;line-height:1.65;margin-bottom:12px;flex:1}
+
 .product-specs {display:flex;flex-wrap:wrap;gap:6px;margin-top:auto}
+
 .spec-tag {display:inline-flex;align-items:center;gap:4px;padding:3px 8px;background:var(--bg-alt);border-radius:5px;font-size:0.72rem;font-weight:500;color:var(--text-secondary)}
+
 .spec-tag::before {content:'';width:4px;height:4px;background:var(--accent);border-radius:50%}
 
+
+
 /* ========== ADVANTAGES ========== */
+
 .adv-grid {display:grid;grid-template-columns:repeat(3,1fr);gap:20px;max-width:960px;margin:0 auto}
+
 .adv-card {background:#fff;border:1px solid var(--border);border-radius:var(--radius-lg);padding:28px 20px;text-align:center;transition:all var(--transition)}
+
 .adv-card:hover {box-shadow:var(--shadow);transform:translateY(-2px)}
+
 .adv-icon {width:48px;height:48px;background:var(--bg-alt);border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:1.4rem;margin:0 auto 14px}
+
 .adv-card h4 {font-size:0.95rem;font-weight:700;color:var(--primary);margin-bottom:6px}
+
 .adv-card p {font-size:0.82rem;color:var(--text-secondary)}
 
+
+
 /* ========== ABOUT ========== */
+
 .about-inner {max-width:800px;margin:0 auto;text-align:center}
+
 .about-inner h3 {font-size:1.6rem;font-weight:700;color:var(--primary);margin-bottom:14px}
+
 .about-inner p {color:var(--text-secondary);margin-bottom:14px;line-height:1.8;font-size:0.92rem}
+
 .stat-grid {display:grid;grid-template-columns:repeat(4,1fr);gap:16px;max-width:600px;margin:28px auto 0}
+
 .stat-box {background:var(--bg-alt);padding:18px;border-radius:var(--radius);text-align:center}
+
 .stat-num {font-size:1.7rem;font-weight:800;color:var(--primary)}
+
 .stat-lbl {font-size:0.75rem;color:var(--text-secondary);margin-top:2px}
 
+
+
 /* ========== CONTACT ========== */
+
 .contact-grid {display:grid;grid-template-columns:1fr 1fr;gap:24px}
+
 .contact-box {background:#fff;border:1px solid var(--border);border-radius:var(--radius-lg);padding:32px}
+
 .contact-box h3 {font-size:1.1rem;font-weight:700;color:var(--primary);margin-bottom:20px}
+
 .contact-row {display:flex;gap:14px;margin-bottom:16px}
+
 .contact-icon-box {width:40px;height:40px;background:var(--bg-alt);border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:1rem;flex-shrink:0}
+
 .contact-info h5 {font-size:0.7rem;color:var(--text-secondary);text-transform:uppercase;letter-spacing:0.04em;margin-bottom:2px}
+
 .contact-info p,.contact-info a {font-size:0.92rem;font-weight:600;color:var(--text);text-decoration:none;word-break:break-all}
+
 .contact-info a:hover {color:var(--primary-light)}
+
 .wa-btn {display:inline-flex;align-items:center;gap:8px;background:#25D366;color:#fff;padding:12px 22px;border-radius:10px;text-decoration:none;font-weight:600;font-size:0.88rem;margin-top:10px;transition:all var(--transition)}
+
 .wa-btn:hover {transform:translateY(-2px);box-shadow:0 8px 20px rgba(37,211,102,0.3)}
+
 .highlight-list {list-style:none;margin-top:14px}
+
 .highlight-list li {padding:7px 0;color:var(--text-secondary);font-size:0.84rem}
 
+
+
 /* ========== FOOTER ========== */
+
 .footer {background:var(--primary);padding:32px 0;text-align:center}
+
 .footer p {color:rgba(255,255,255,0.55);font-size:0.82rem}
 
+
+
 /* ========== RESPONSIVE ========== */
+
 @media (max-width:1024px) {
+
     .hero-inner {grid-template-columns:1fr;gap:36px;text-align:center;padding:60px 24px 40px}
+
     .hero-text p {margin:0 auto 28px}
+
     .hero-badges {justify-content:center}
+
     .hero-visual {order:-1}
+
     .hero-img {max-width:420px}
+
     .contact-grid {grid-template-columns:1fr}
+
     .stat-grid {grid-template-columns:repeat(2,1fr);max-width:400px}
+
     .product-card {flex:0 0 calc(50% - 10px);max-width:calc(50% - 10px)}
+
     .adv-grid {grid-template-columns:repeat(2,1fr)}
+
 }
+
 @media (max-width:768px) {
+
     .nav-links-wrap {display:none;position:absolute;top:64px;left:0;right:0;background:#fff;flex-direction:column;padding:16px;box-shadow:var(--shadow);gap:4px;z-index:999}
+
     .nav-links-wrap.open {display:flex}
+
     .nav-menu-btn {display:block}
+
     .hero-text h1 {font-size:2rem}
+
     .section-title {font-size:1.5rem}
+
     .product-card {flex:0 0 100%;max-width:100%}
+
     .adv-grid {grid-template-columns:1fr}
+
     .stat-grid {grid-template-columns:1fr 1fr}
+
 }
+
 </style>
+
 </head>
+
 <body>
 
+
+
 <!-- ==================== NAV ==================== -->
+
 <nav class="nav" id="nav">
+
     <div class="nav-inner">
+
         <a href="#" class="nav-brand">
+
             <span class="nav-brand-icon">KY</span>
+
             <span data-i18n data-zh="科源洁具" data-en="KEYUAN" data-es="KEYUAN">科源洁具</span>
+
         </a>
+
         <div class="nav-links-wrap" id="navLinks">
+
             <div class="nav-right">
+
                 <a href="#products" class="nav-link" data-i18n data-zh="产品" data-en="Products" data-es="Productos">产品</a>
+
                 <a href="#advantages" class="nav-link" data-i18n data-zh="优势" data-en="Advantages" data-es="Ventajas">优势</a>
+
                 <a href="#about" class="nav-link" data-i18n data-zh="关于我们" data-en="About" data-es="Nosotros">关于我们</a>
+
                 <a href="#contact" class="nav-link" data-i18n data-zh="联系" data-en="Contact" data-es="Contacto">联系</a>
+
                 <div class="lang-group">
+
                     <button class="lang-btn active" onclick="switchLang('en')" id="lEn">EN</button>
+
                     <button class="lang-btn" onclick="switchLang('es')" id="lEs">ES</button>
+
                     <button class="lang-btn" onclick="switchLang('zh')" id="lZh">中文</button>
+
                 </div>
+
             </div>
+
         </div>
+
         <button class="nav-menu-btn" onclick="document.getElementById('navLinks').classList.toggle('open')">☰</button>
+
     </div>
+
 </nav>
 
+
+
 <!-- ==================== HERO ==================== -->
+
 <section class="hero">
+
     <div class="hero-inner">
+
         <div class="hero-text">
+
             <h1 data-i18n data-zh="专业洁具制造商<span>自 2007</span>" data-en="Professional Faucet Manufacturer<span>Since 2007</span>" data-es="Fabricante de Grifería<span>Desde 2007</span>">专业洁具制造商<span>自 2007</span></h1>
+
             <p data-i18n
+
                data-zh="20+年专注水龙头、铜水嘴、角阀、截止阀及配件的研发与制造。200+款产品远销南美、东欧、中东及非洲，以可靠品质与有竞争力的价格服务全球客户。"
+
                data-en="20+ years of R&D and manufacturing in faucets, brass bibcocks, angle valves, stop valves & accessories. 200+ products exported to South America, Eastern Europe, Middle East & Africa."
+
                data-es="Más de 20 años fabricando grifos, llaves de latón, válvulas de ángulo, cartuchos y accesorios. 200+ productos exportados a Sudamérica, Europa del Este, Medio Oriente y África.">20+年专注水龙头、铜水嘴、角阀、截止阀及配件的研发与制造。200+款产品远销南美、东欧、中东及非洲，以可靠品质与有竞争力的价格服务全球客户。</p>
+
             <div class="hero-badges">
+
                 <div class="hero-badge">✓ <span data-i18n data-zh="20+年经验" data-en="20+ Years" data-es="20+ Años">20+年经验</span></div>
+
                 <div class="hero-badge">✓ <span data-i18n data-zh="200+款产品" data-en="200+ Models" data-es="200+ Modelos">200+款产品</span></div>
+
                 <div class="hero-badge">✓ <span data-i18n data-zh="源头工厂" data-en="Source Factory" data-es="Fábrica Directa">源头工厂</span></div>
+
                 <div class="hero-badge">✓ <span data-i18n data-zh="全球出口" data-en="Global Export" data-es="Exportación Global">全球出口</span></div>
+
             </div>
+
             <a href="#products" class="btn btn-accent" data-i18n data-zh="查看产品 →" data-en="View Products →" data-es="Ver Productos →">查看产品 →</a>
+
             <a href="#contact" class="btn btn-ghost" style="margin-left:12px;" data-i18n data-zh="联系我们" data-en="Contact Us" data-es="Contáctenos">联系我们</a>
+
         </div>
+
         <div class="hero-visual">
+
             <img src="images/company.png" alt="KEYUAN Factory" class="hero-img">
+
         </div>
+
     </div>
+
 </section>
+
+
 
 <!-- ==================== PRODUCTS ==================== -->
+
 <section class="section" id="products">
+
     <div class="container">
+
         <div class="section-head">
+
             <div class="section-badge" data-i18n data-zh="产品中心" data-en="Our Products" data-es="Nuestros Productos">产品中心</div>
+
             <h2 class="section-title" data-i18n data-zh="200+款产品，覆盖全场景需求" data-en="200+ Products for Every Scenario" data-es="200+ Productos para Cada Necesidad">200+款产品，覆盖全场景需求</h2>
+
             <p class="section-desc" data-i18n
+
                data-zh="按应用场景、功能与材质分类展示，涵盖面盆、厨房、户外及管道控制全品类"
+
                data-en="Categorized by application, function & material — covering basin, kitchen, outdoor & pipeline control"
+
                data-es="Clasificado por aplicación, función y material: lavabo, cocina, exterior y control de tuberías">按应用场景、功能与材质分类展示，涵盖面盆、厨房、户外及管道控制全品类</p>
+
             <div class="products-notice" data-i18n
+
                  data-zh="以下仅为部分产品展示。手柄样式、阀芯类型、表面材质等均可根据客户需求定制，欢迎来样加工。"
+
                  data-en="Partial product display below. Handle style, cartridge type, surface finish and more are customizable. OEM/ODM welcome."
+
                  data-es="Muestra parcial de productos. El estilo del mango, tipo de cartucho, acabado y más son personalizables. Bienvenido OEM/ODM.">
+
                 以下仅为部分产品展示。手柄样式、阀芯类型、表面材质等均可根据客户需求定制，欢迎来样加工。
+
             </div>
+
         </div>
+
+
 
         <!-- ===== Category 1: Basin/Bathroom ===== -->
+
         <div class="category-section">
+
             <div class="category-label">
+
                 <h3>🛁 <span data-i18n data-zh="面盆/浴室龙头系列" data-en="Basin &amp; Bathroom Faucets" data-es="Grifos para Lavabo y Baño">面盆/浴室龙头系列</span></h3>
+
                 <div class="line"></div>
+
                 <span class="count" data-i18n data-zh="单把 / 双把 / 淋浴三联" data-en="Single / Dual / Shower Sets" data-es="Simple / Doble / Ducha">单把 / 双把 / 淋浴三联</span>
+
             </div>
+
             <div class="product-grid">
+
                 <div class="product-card">
+
                     <div class="product-img-wrap"><img src="images/KY6619.jpg" alt="KY6619"></div>
+
                     <div class="product-body">
+
                         <span class="product-model">KY6619</span>
+
                         <h4 class="product-name" data-i18n data-zh="单把面盆龙头" data-en="Single-Handle Basin Faucet" data-es="Grifo de Lavabo Monomando">单把面盆龙头</h4>
+
                         <p class="product-desc" data-i18n data-zh="现代简约造型，单把手上下调节冷热水，适合家庭浴室和公寓洗手台。" data-en="Modern minimalist design, single-handle for hot & cold control. Ideal for home bathrooms and apartment sinks." data-es="Diseño moderno y minimalista, monomando para control frío/calor. Ideal para baños domésticos y departamentos.">现代简约造型，单把手上下调节冷热水，适合家庭浴室和公寓洗手台。</p>
+
                         <div class="product-specs">
+
                             <span class="spec-tag" data-i18n data-zh="锌合金" data-en="Zinc Alloy" data-es="Aleación Zinc">锌合金</span>
+
                             <span class="spec-tag" data-i18n data-zh="陶瓷阀芯" data-en="Ceramic" data-es="Cerámico">陶瓷阀芯</span>
+
                             <span class="spec-tag" data-i18n data-zh="镀铬" data-en="Chrome" data-es="Cromado">镀铬</span>
+
                         </div>
+
                     </div>
+
                 </div>
+
                 <div class="product-card">
+
                     <div class="product-img-wrap"><img src="images/KY6702.jpg" alt="KY6702"></div>
+
                     <div class="product-body">
+
                         <span class="product-model">KY6702</span>
+
                         <h4 class="product-name" data-i18n data-zh="经典单把面盆龙头" data-en="Classic Single-Handle Basin Faucet" data-es="Grifo Clásico de Lavabo Monomando">经典单把面盆龙头</h4>
+
                         <p class="product-desc" data-i18n data-zh="流线型出水嘴设计，出水柔和不飞溅，适合酒店客房及精装公寓工程配套。" data-en="Streamlined spout with gentle, splash-free flow. Ideal for hotel rooms and premium apartment projects." data-es="Diseño aerodinámico con flujo suave sin salpicaduras. Ideal para hoteles y proyectos de departamentos.">流线型出水嘴设计，出水柔和不飞溅，适合酒店客房及精装公寓工程配套。</p>
+
                         <div class="product-specs">
+
                             <span class="spec-tag" data-i18n data-zh="锌合金" data-en="Zinc Alloy" data-es="Aleación Zinc">锌合金</span>
+
                             <span class="spec-tag" data-i18n data-zh="陶瓷阀芯" data-en="Ceramic" data-es="Cerámico">陶瓷阀芯</span>
+
                             <span class="spec-tag" data-i18n data-zh="镀铬" data-en="Chrome" data-es="Cromado">镀铬</span>
+
                         </div>
+
                     </div>
+
                 </div>
+
                 <div class="product-card">
+
                     <div class="product-img-wrap"><img src="images/KY8501.jpg" alt="KY8501"></div>
+
                     <div class="product-body">
+
                         <span class="product-model">KY8501</span>
+
                         <h4 class="product-name" data-i18n data-zh="双把手面盆龙头" data-en="Dual-Handle Basin Faucet" data-es="Grifo de Lavabo Dos Manijas">双把手面盆龙头</h4>
+
                         <p class="product-desc" data-i18n data-zh="双把手独立控温，高弯出水嘴设计，方便洗漱和日常用水，经典耐用款式。" data-en="Dual handles for independent temperature control. High-arc spout for convenient washing. Classic & durable." data-es="Dos manijas para control de temperatura independiente. Caño alto para lavado cómodo. Clásico y duradero.">双把手独立控温，高弯出水嘴设计，方便洗漱和日常用水，经典耐用款式。</p>
+
                         <div class="product-specs">
+
                             <span class="spec-tag" data-i18n data-zh="锌合金" data-en="Zinc Alloy" data-es="Aleación Zinc">锌合金</span>
+
                             <span class="spec-tag" data-i18n data-zh="双把手" data-en="Dual Handle" data-es="Dos Manijas">双把手</span>
+
                             <span class="spec-tag" data-i18n data-zh="镀铬" data-en="Chrome" data-es="Cromado">镀铬</span>
+
                         </div>
+
                     </div>
+
                 </div>
+
                 <div class="product-card">
+
                     <div class="product-img-wrap"><img src="images/KY8613.jpg" alt="KY8613"></div>
+
                     <div class="product-body">
+
                         <span class="product-model">KY8613</span>
+
                         <h4 class="product-name" data-i18n data-zh="淋浴三联龙头" data-en="Shower Mixer Faucet Set" data-es="Juego de Grifería para Ducha">淋浴三联龙头</h4>
+
                         <p class="product-desc" data-i18n data-zh="冷热混水阀+手持花洒+下出水三合一，墙式安装，适用于淋浴房和浴缸场景。" data-en="3-in-1 mixer valve + hand shower + spout. Wall-mounted for shower rooms and bathtubs." data-es="3 en 1: válvula mezcladora + ducha de mano + grifo. Montaje en pared para duchas y bañeras.">冷热混水阀+手持花洒+下出水三合一，墙式安装，适用于淋浴房和浴缸场景。</p>
+
                         <div class="product-specs">
+
                             <span class="spec-tag" data-i18n data-zh="铜/锌合金" data-en="Brass/Zinc" data-es="Latón/Zinc">铜/锌合金</span>
+
                             <span class="spec-tag" data-i18n data-zh="三联功能" data-en="3-Way" data-es="3 Vías">三联功能</span>
+
                             <span class="spec-tag" data-i18n data-zh="墙式安装" data-en="Wall-Mount" data-es="Pared">墙式安装</span>
+
                         </div>
+
                     </div>
+
                 </div>
+
             </div>
+
         </div>
+
+
 
         <!-- ===== Category 2: Kitchen ===== -->
+
         <div class="category-section">
+
             <div class="category-label">
+
                 <h3>🍳 <span data-i18n data-zh="厨房龙头系列" data-en="Kitchen Faucet Series" data-es="Grifos de Cocina">厨房龙头系列</span></h3>
+
                 <div class="line"></div>
+
                 <span class="count" data-i18n data-zh="高弯 / 加长 / 单把" data-en="High-Arc / Extended / Single" data-es="Alto / Extendido / Simple">高弯 / 加长 / 单把</span>
+
             </div>
+
             <div class="product-grid">
+
                 <div class="product-card">
+
                     <div class="product-img-wrap"><img src="images/KY6319.jpg" alt="KY6319"></div>
+
                     <div class="product-body">
+
                         <span class="product-model">KY6319</span>
+
                         <h4 class="product-name" data-i18n data-zh="高弯厨房龙头" data-en="High-Arc Kitchen Faucet" data-es="Grifo de Cocina Caño Alto">高弯厨房龙头</h4>
+
                         <p class="product-desc" data-i18n data-zh="高挑弧形出水嘴，方便清洗大锅具和蔬果，现代厨房首选。" data-en="Tall arched spout. Perfect for washing large pots and vegetables in modern kitchens." data-es="Caño alto y curvo. Perfecto para lavar ollas grandes y verduras en cocinas modernas.">高挑弧形出水嘴，方便清洗大锅具和蔬果，现代厨房首选。</p>
+
                         <div class="product-specs">
+
                             <span class="spec-tag" data-i18n data-zh="锌合金" data-en="Zinc Alloy" data-es="Aleación Zinc">锌合金</span>
+
                             <span class="spec-tag" data-i18n data-zh="镀铬" data-en="Chrome" data-es="Cromado">镀铬</span>
+
                         </div>
+
                     </div>
+
                 </div>
+
                 <div class="product-card">
+
                     <div class="product-img-wrap"><img src="images/KY6625.jpg" alt="KY6625"></div>
+
                     <div class="product-body">
+
                         <span class="product-model">KY6625</span>
+
                         <h4 class="product-name" data-i18n data-zh="长嘴厨房龙头" data-en="Long-Spout Kitchen Faucet" data-es="Grifo de Cocina Caño Largo">长嘴厨房龙头</h4>
+
                         <p class="product-desc" data-i18n data-zh="加长出水嘴设计，水槽覆盖范围更大，单把手操作便捷，适合各种厨房台面。" data-en="Extended spout for wider sink coverage. Single-handle operation, fits various kitchen countertops." data-es="Caño extendido para mayor cobertura del fregadero. Monomando práctico para distintas encimeras.">加长出水嘴设计，水槽覆盖范围更大，单把手操作便捷，适合各种厨房台面。</p>
+
                         <div class="product-specs">
+
                             <span class="spec-tag" data-i18n data-zh="锌合金" data-en="Zinc Alloy" data-es="Aleación Zinc">锌合金</span>
+
                             <span class="spec-tag" data-i18n data-zh="加长嘴" data-en="Extended Spout" data-es="Caño Extendido">加长嘴</span>
+
                             <span class="spec-tag" data-i18n data-zh="镀铬" data-en="Chrome" data-es="Cromado">镀铬</span>
+
                         </div>
+
                     </div>
+
                 </div>
+
                 <div class="product-card">
+
                     <div class="product-img-wrap"><img src="images/KY8546.jpg" alt="KY8546"></div>
+
                     <div class="product-body">
+
                         <span class="product-model">KY8546</span>
+
                         <h4 class="product-name" data-i18n data-zh="双把加长厨房龙头" data-en="Dual-Handle Extended Kitchen Faucet" data-es="Grifo de Cocina Dos Manijas Extendido">双把加长厨房龙头</h4>
+
                         <p class="product-desc" data-i18n data-zh="双把手独立控温，金色装饰把手，加长弯管设计，高端厨房及酒店工程优选。" data-en="Dual handles with gold accents. Extended curved spout. Premium choice for high-end kitchens and hotels." data-es="Dos manijas con detalles dorados. Caño curvo extendido. Opción premium para cocinas de lujo y hoteles.">双把手独立控温，金色装饰把手，加长弯管设计，高端厨房及酒店工程优选。</p>
+
                         <div class="product-specs">
+
                             <span class="spec-tag" data-i18n data-zh="锌合金" data-en="Zinc Alloy" data-es="Aleación Zinc">锌合金</span>
+
                             <span class="spec-tag" data-i18n data-zh="金色把手" data-en="Gold Handle" data-es="Manija Dorada">金色把手</span>
+
                             <span class="spec-tag" data-i18n data-zh="加长嘴" data-en="Extended" data-es="Extendido">加长嘴</span>
+
                         </div>
+
                     </div>
+
                 </div>
+
                 <div class="product-card">
+
                     <div class="product-img-wrap"><img src="images/KY9001.jpg" alt="KY9001"></div>
+
                     <div class="product-body">
+
                         <span class="product-model">KY9001</span>
+
                         <h4 class="product-name" data-i18n data-zh="单把龙头" data-en="Single-Handle Faucet" data-es="Grifo Monomando">单把龙头</h4>
+
                         <p class="product-desc" data-i18n data-zh="小巧紧凑设计，适合小户型厨房、阳台洗衣槽及卫生间辅助用水点。" data-en="Compact design for small kitchens, balcony laundry sinks and secondary water points." data-es="Diseño compacto para cocinas pequeñas, lavaderos de balcón y puntos de agua secundarios.">小巧紧凑设计，适合小户型厨房、阳台洗衣槽及卫生间辅助用水点。</p>
+
                         <div class="product-specs">
+
                             <span class="spec-tag" data-i18n data-zh="锌合金" data-en="Zinc Alloy" data-es="Aleación Zinc">锌合金</span>
+
                             <span class="spec-tag" data-i18n data-zh="紧凑设计" data-en="Compact" data-es="Compacto">紧凑设计</span>
+
                             <span class="spec-tag" data-i18n data-zh="镀铬" data-en="Chrome" data-es="Cromado">镀铬</span>
+
                         </div>
+
                     </div>
+
                 </div>
+
             </div>
+
         </div>
+
+
 
         <!-- ===== Category 3: Outdoor/Industrial ===== -->
+
         <div class="category-section">
+
             <div class="category-label">
+
                 <h3>🌿 <span data-i18n data-zh="户外/工业水嘴系列" data-en="Outdoor &amp; Industrial Bibcocks" data-es="Llaves para Exterior e Industria">户外/工业水嘴系列</span></h3>
+
                 <div class="line"></div>
+
                 <span class="count" data-i18n data-zh="全铜 / 墙式 / 快开" data-en="Brass / Wall / Quick-Open" data-es="Latón / Pared / Apertura Rápida">全铜 / 墙式 / 快开</span>
+
             </div>
+
             <div class="product-grid">
+
                 <div class="product-card">
+
                     <div class="product-img-wrap"><img src="images/KY9022.jpg" alt="KY9022"></div>
+
                     <div class="product-body">
+
                         <span class="product-model">KY9022</span>
+
                         <h4 class="product-name" data-i18n data-zh="墙式单把水嘴" data-en="Wall-Mount Single Bibcock" data-es="Llave de Pared Simple">墙式单把水嘴</h4>
+
                         <p class="product-desc" data-i18n data-zh="十字花型手柄，墙式安装，适合阳台、花园、户外冲洗及工业场所用水。" data-en="Cross-flower handle, wall-mounted. Ideal for balconies, gardens, outdoor washing & industrial use." data-es="Manija tipo cruz, montaje en pared. Ideal para balcones, jardines, lavado exterior y uso industrial.">十字花型手柄，墙式安装，适合阳台、花园、户外冲洗及工业场所用水。</p>
+
                         <div class="product-specs">
+
                             <span class="spec-tag" data-i18n data-zh="全铜" data-en="Brass" data-es="Latón">全铜</span>
+
                             <span class="spec-tag" data-i18n data-zh="墙式" data-en="Wall-Mount" data-es="Pared">墙式</span>
+
                             <span class="spec-tag" data-i18n data-zh="十字手柄" data-en="Cross Handle" data-es="Manija Cruz">十字手柄</span>
+
                         </div>
+
                     </div>
+
                 </div>
+
                 <div class="product-card">
+
                     <div class="product-img-wrap"><img src="images/KY9114.jpg" alt="KY9114"></div>
+
                     <div class="product-body">
+
                         <span class="product-model">KY9114</span>
+
                         <h4 class="product-name" data-i18n data-zh="黄铜快开水嘴" data-en="Brass Quick-Open Bibcock" data-es="Llave de Latón Apertura Rápida">黄铜快开水嘴</h4>
+
                         <p class="product-desc" data-i18n data-zh="90°快开结构，全铜精铸，抗压防爆裂，适合厨房、花园及农业灌溉场景。" data-en="90° quick-open mechanism. Solid brass cast, burst-resistant. For kitchens, gardens & irrigation." data-es="Mecanismo de apertura rápida 90°. Latón macizo, antirrotura. Para cocinas, jardines y riego.">90°快开结构，全铜精铸，抗压防爆裂，适合厨房、花园及农业灌溉场景。</p>
+
                         <div class="product-specs">
+
                             <span class="spec-tag" data-i18n data-zh="全铜" data-en="Brass" data-es="Latón">全铜</span>
+
                             <span class="spec-tag" data-i18n data-zh="快开" data-en="Quick-Open" data-es="Apertura Rápida">快开</span>
+
                             <span class="spec-tag" data-i18n data-zh="防爆裂" data-en="Burst-Proof" data-es="Antirrotura">防爆裂</span>
+
                         </div>
+
                     </div>
+
                 </div>
+
                 <div class="product-card">
+
                     <div class="product-img-wrap"><img src="images/KY9201.jpg" alt="KY9201"></div>
+
                     <div class="product-body">
+
                         <span class="product-model">KY9201</span>
+
                         <h4 class="product-name" data-i18n data-zh="T型把手铜水嘴" data-en="T-Handle Brass Bibcock" data-es="Llave de Latón Manija en T">T型把手铜水嘴</h4>
+
                         <p class="product-desc" data-i18n data-zh="经典T型大把手，操作省力，全铜材质经久耐用，适配多种管径接口。" data-en="Classic T-handle for easy operation. Solid brass for long-lasting durability. Fits various pipe sizes." data-es="Manija en T clásica, fácil de operar. Latón macizo de larga duración. Compatible con varios diámetros.">经典T型大把手，操作省力，全铜材质经久耐用，适配多种管径接口。</p>
+
                         <div class="product-specs">
+
                             <span class="spec-tag" data-i18n data-zh="全铜" data-en="Brass" data-es="Latón">全铜</span>
+
                             <span class="spec-tag" data-i18n data-zh="T型把手" data-en="T-Handle" data-es="Manija en T">T型把手</span>
+
                             <span class="spec-tag">DN15</span>
+
                         </div>
+
                     </div>
+
                 </div>
+
                 <div class="product-card">
+
                     <div class="product-img-wrap"><img src="images/KY9215.jpg" alt="KY9215"></div>
+
                     <div class="product-body">
+
                         <span class="product-model">KY9215</span>
+
                         <h4 class="product-name" data-i18n data-zh="外螺纹铜水嘴" data-en="External Thread Brass Bibcock" data-es="Llave de Latón Rosca Externa">外螺纹铜水嘴</h4>
+
                         <p class="product-desc" data-i18n data-zh="外螺纹接口设计，方便连接软管和喷枪，适合花园灌溉和户外冲洗作业。" data-en="External thread for easy hose & spray gun connection. Ideal for garden irrigation & outdoor washing." data-es="Rosca externa para conexión fácil de manguera y pistola. Ideal para riego de jardín y lavado exterior.">外螺纹接口设计，方便连接软管和喷枪，适合花园灌溉和户外冲洗作业。</p>
+
                         <div class="product-specs">
+
                             <span class="spec-tag" data-i18n data-zh="全铜" data-en="Brass" data-es="Latón">全铜</span>
+
                             <span class="spec-tag" data-i18n data-zh="外螺纹" data-en="Ext. Thread" data-es="Rosca Ext.">外螺纹</span>
+
                             <span class="spec-tag">DN15</span>
+
                         </div>
+
                     </div>
+
                 </div>
+
             </div>
+
         </div>
+
+
 
         <!-- ===== Category 4: Valves & Accessories ===== -->
+
         <div class="category-section">
+
             <div class="category-label">
+
                 <h3>⚙️ <span data-i18n data-zh="阀门与配件系列" data-en="Valves &amp; Accessories" data-es="Válvulas y Accesorios">阀门与配件系列</span></h3>
+
                 <div class="line"></div>
+
                 <span class="count" data-i18n data-zh="角阀 / 阀芯 / 下水器" data-en="Angle Valve / Cartridge / Drain" data-es="Válvula Angular / Cartucho / Desagüe">角阀 / 阀芯 / 下水器</span>
+
             </div>
+
             <div class="product-grid">
+
                 <div class="product-card">
+
                     <div class="product-img-wrap"><img src="images/KY5001.jpg" alt="KY5001"></div>
+
                     <div class="product-body">
+
                         <span class="product-model">KY5001</span>
+
                         <h4 class="product-name" data-i18n data-zh="三角阀（角式截止阀）" data-en="Angle Stop Valve" data-es="Válvula de Ángulo">三角阀（角式截止阀）</h4>
+
                         <p class="product-desc" data-i18n data-zh="90°进出水设计，节省空间，面盆/马桶/热水器标配管道控制件。" data-en="90° inlet/outlet saves space. Standard for basins, toilets & water heater connections." data-es="Diseño 90° entrada/salida que ahorra espacio. Estándar para lavabos, inodoros y calentadores.">90°进出水设计，节省空间，面盆/马桶/热水器标配管道控制件。</p>
+
                         <div class="product-specs">
+
                             <span class="spec-tag" data-i18n data-zh="铜/锌合金" data-en="Brass/Zinc" data-es="Latón/Zinc">铜/锌合金</span>
+
                             <span class="spec-tag" data-i18n data-zh="快开" data-en="Quick-Open" data-es="Apertura Rápida">快开</span>
+
                             <span class="spec-tag">DN15</span>
+
                         </div>
+
                     </div>
+
                 </div>
+
                 <div class="product-card">
+
                     <div class="product-img-wrap"><img src="images/KY4020.jpg" alt="KY4020"></div>
+
                     <div class="product-body">
+
                         <span class="product-model">KY4020</span>
+
                         <h4 class="product-name" data-i18n data-zh="快开铜阀芯" data-en="Quick-Open Brass Cartridge" data-es="Cartucho de Latón Apertura Rápida">快开铜阀芯</h4>
+
                         <p class="product-desc" data-i18n data-zh="90°旋转快开结构，铜质阀杆耐用不生锈，水龙头核心组件，支持定制。" data-en="90° quick-turn brass stem cartridge. Core faucet component. Customizable." data-es="Cartucho de latón con giro rápido 90°. Componente central de grifería. Personalizable.">90°旋转快开结构，铜质阀杆耐用不生锈，水龙头核心组件，支持定制。</p>
+
                         <div class="product-specs">
+
                             <span class="spec-tag" data-i18n data-zh="全铜" data-en="Brass" data-es="Latón">全铜</span>
+
                             <span class="spec-tag" data-i18n data-zh="快开" data-en="Quick-Open" data-es="Apertura Rápida">快开</span>
+
                             <span class="spec-tag" data-i18n data-zh="通用型" data-en="Universal" data-es="Universal">通用型</span>
+
                         </div>
+
                     </div>
+
                 </div>
+
                 <div class="product-card">
+
                     <div class="product-img-wrap"><img src="images/KY4127.jpg" alt="KY4127"></div>
+
                     <div class="product-body">
+
                         <span class="product-model">KY4127</span>
+
                         <h4 class="product-name" data-i18n data-zh="精密陶瓷阀芯" data-en="Precision Ceramic Cartridge" data-es="Cartucho Cerámico de Precisión">精密陶瓷阀芯</h4>
+
                         <p class="product-desc" data-i18n data-zh="进口级精密陶瓷密封片，50万次开关寿命，密封性能优异，手感顺滑。" data-en="Premium ceramic discs. 500,000 cycle lifespan. Excellent sealing with smooth feel." data-es="Discos cerámicos de precisión. 500.000 ciclos de vida útil. Sellado excelente con tacto suave.">进口级精密陶瓷密封片，50万次开关寿命，密封性能优异，手感顺滑。</p>
+
                         <div class="product-specs">
+
                             <span class="spec-tag" data-i18n data-zh="精密陶瓷" data-en="Ceramic" data-es="Cerámico">精密陶瓷</span>
+
                             <span class="spec-tag" data-i18n data-zh="50万次" data-en="500K Cycles" data-es="500K Ciclos">50万次</span>
+
                             <span class="spec-tag" data-i18n data-zh="通用型" data-en="Universal" data-es="Universal">通用型</span>
+
                         </div>
+
                     </div>
+
                 </div>
+
                 <div class="product-card">
+
                     <div class="product-img-wrap"><img src="images/B014.jpg" alt="B014"></div>
+
                     <div class="product-body">
+
                         <span class="product-model">B014</span>
+
                         <h4 class="product-name" data-i18n data-zh="双联墙座（花洒固定座）" data-en="Twin Wall Bracket (Shower Holder)" data-es="Soporte de Pared Doble para Ducha">双联墙座（花洒固定座）</h4>
+
                         <p class="product-desc" data-i18n data-zh="全铜双联固定座，用于安装淋浴花洒杆，加厚设计承重力强，安装稳固。" data-en="Solid brass twin bracket for shower rails. Heavy-duty design with strong load capacity." data-es="Soporte doble de latón macizo para barras de ducha. Diseño reforzado con gran capacidad de carga.">全铜双联固定座，用于安装淋浴花洒杆，加厚设计承重力强，安装稳固。</p>
+
                         <div class="product-specs">
+
                             <span class="spec-tag" data-i18n data-zh="全铜" data-en="Brass" data-es="Latón">全铜</span>
+
                             <span class="spec-tag" data-i18n data-zh="双联" data-en="Twin" data-es="Doble">双联</span>
+
                             <span class="spec-tag" data-i18n data-zh="加厚" data-en="Heavy-Duty" data-es="Reforzado">加厚</span>
+
                         </div>
+
                     </div>
+
                 </div>
+
                 <div class="product-card">
+
                     <div class="product-img-wrap"><img src="images/H-C003.jpg" alt="H-C003"></div>
+
                     <div class="product-body">
+
                         <span class="product-model">H-C003</span>
+
                         <h4 class="product-name" data-i18n data-zh="弹跳式下水器" data-en="Pop-Up Basin Drain" data-es="Desagüe de Lavabo Push-Up">弹跳式下水器</h4>
+
                         <p class="product-desc" data-i18n data-zh="按压弹跳开关设计，方便清理堵塞，不锈钢材质耐腐蚀，适配标准面盆孔径。" data-en="Press-to-open design for easy cleaning. Stainless steel, corrosion-resistant. Fits standard basins." data-es="Diseño push para abrir, fácil limpieza. Acero inoxidable anticorrosión. Compatible con lavabos estándar.">按压弹跳开关设计，方便清理堵塞，不锈钢材质耐腐蚀，适配标准面盆孔径。</p>
+
                         <div class="product-specs">
+
                             <span class="spec-tag" data-i18n data-zh="不锈钢" data-en="S.S." data-es="Acero Inox.">不锈钢</span>
+
                             <span class="spec-tag" data-i18n data-zh="弹跳式" data-en="Pop-Up" data-es="Push-Up">弹跳式</span>
+
                             <span class="spec-tag" data-i18n data-zh="防堵塞" data-en="Anti-Clog" data-es="Antiatasco">防堵塞</span>
+
                         </div>
+
                     </div>
+
                 </div>
+
             </div>
+
         </div>
+
     </div>
+
 </section>
+
+
 
 <!-- ==================== ADVANTAGES ==================== -->
+
 <section class="section section-alt" id="advantages">
+
     <div class="container">
+
         <div class="section-head">
+
             <div class="section-badge" data-i18n data-zh="核心优势" data-en="Why Choose Us" data-es="Por Qué Elegirnos">核心优势</div>
+
             <h2 class="section-title" data-i18n data-zh="选择科源的六大理由" data-en="Six Reasons to Partner with KEYUAN" data-es="Seis Razones para Trabajar con KEYUAN">选择科源的六大理由</h2>
+
         </div>
+
         <div class="adv-grid">
+
             <div class="adv-card"><div class="adv-icon">💰</div><h4 data-i18n data-zh="价格竞争力" data-en="Competitive Pricing" data-es="Precios Competitivos">价格竞争力</h4><p data-i18n data-zh="地处台州洁具产业集群，原材料及物流成本优势显著" data-en="Located in Taizhou cluster — significant cost advantages" data-es="Ubicados en el clúster de Taizhou — ventajas significativas de costos">地处台州洁具产业集群，原材料及物流成本优势显著</p></div>
+
             <div class="adv-card"><div class="adv-icon">📦</div><h4 data-i18n data-zh="产品线齐全" data-en="Complete Product Line" data-es="Línea Completa">产品线齐全</h4><p data-i18n data-zh="200+款产品覆盖水龙头、水嘴、角阀、阀芯及配件" data-en="200+ products: faucets, bibcocks, valves, cartridges & accessories" data-es="200+ productos: grifos, llaves, válvulas, cartuchos y accesorios">200+款产品覆盖水龙头、水嘴、角阀、阀芯及配件</p></div>
+
             <div class="adv-card"><div class="adv-icon">🔧</div><h4 data-i18n data-zh="灵活定制" data-en="Flexible Customization" data-es="Personalización Flexible">灵活定制</h4><p data-i18n data-zh="OEM/ODM支持，自定义款式、镀层、包装和Logo" data-en="OEM/ODM — customize styles, finishes, packaging &amp; logo" data-es="OEM/ODM — personalice estilos, acabados, empaque y logo">OEM/ODM支持，自定义款式、镀层、包装和Logo</p></div>
+
             <div class="adv-card"><div class="adv-icon">✅</div><h4 data-i18n data-zh="品质可靠" data-en="Reliable Quality" data-es="Calidad Confiable">品质可靠</h4><p data-i18n data-zh="精选铜材与锌合金，严格质检，经久耐用" data-en="Selected brass &amp; zinc alloy with strict QC" data-es="Latón y aleación de zinc seleccionados con control de calidad estricto">精选铜材与锌合金，严格质检，经久耐用</p></div>
+
             <div class="adv-card"><div class="adv-icon">🚚</div><h4 data-i18n data-zh="物流便捷" data-en="Convenient Logistics" data-es="Logística Conveniente">物流便捷</h4><p data-i18n data-zh="毗邻甬台温高速，距宁波港仅2小时" data-en="Adjacent to highway, 2 hours to Ningbo Port" data-es="Junto a autopista, a 2 horas del Puerto de Ningbo">毗邻甬台温高速，距宁波港仅2小时</p></div>
+
             <div class="adv-card"><div class="adv-icon">🌍</div><h4 data-i18n data-zh="全球市场经验" data-en="Global Experience" data-es="Experiencia Global">全球市场经验</h4><p data-i18n data-zh="远销南美、东欧、中东、非洲，熟悉多国标准" data-en="Exported to S.America, E.Europe, Middle East &amp; Africa" data-es="Exportamos a Sudamérica, Europa del Este, Medio Oriente y África">远销南美、东欧、中东、非洲，熟悉多国标准</p></div>
+
         </div>
+
     </div>
+
 </section>
+
+
 
 <!-- ==================== ABOUT ==================== -->
+
 <section class="section" id="about">
+
     <div class="container">
+
         <div class="about-inner">
+
             <div class="section-badge" style="margin-bottom:14px;display:inline-block;" data-i18n data-zh="关于我们" data-en="About Us" data-es="Sobre Nosotros">关于我们</div>
+
             <h3 data-i18n data-zh="台州市路桥科源洁具有限公司" data-en="Taizhou Luqiao Keyuan Sanitary Ware Co., Ltd." data-es="Taizhou Luqiao Keyuan Sanitary Ware Co., Ltd.">台州市路桥科源洁具有限公司</h3>
+
             <p data-i18n
+
                data-zh="科源洁具成立于2007年，位于浙江省台州市路桥区峰江街道园区中路88号工业园14幢，毗邻甬台温高速，交通十分便利。公司是一家专业从事洁具产品生产加工的私营有限责任公司。"
+
                data-en="Founded in 2007 in Luqiao District, Taizhou City, Zhejiang Province — adjacent to the expressway. We are a professional sanitary ware manufacturer."
+
                data-es="Fundada en 2007 en Luqiao, Taizhou, Zhejiang — junto a la autopista. Somos un fabricante profesional de artículos sanitarios.">科源洁具成立于2007年，位于浙江省台州市路桥区峰江街道园区中路88号工业园14幢，毗邻甬台温高速，交通十分便利。公司是一家专业从事洁具产品生产加工的私营有限责任公司。</p>
+
             <p data-i18n
+
                data-zh="得益于台州成熟的洁具产业生态和完善的供应链体系，我们能够有效控制采购与生产成本，在确保产品质量的同时，为客户提供极具竞争力的报价。公司拥有200+款产品，远销南美、东欧、中东及非洲地区。"
+
                data-en="Thanks to Taizhou's mature industry ecosystem, we control costs effectively. 200+ products exported to South America, Eastern Europe, Middle East &amp; Africa with competitive pricing."
+
                data-es="Gracias al ecosistema industrial de Taizhou, controlamos los costos eficazmente. 200+ productos exportados a Sudamérica, Europa del Este, Medio Oriente y África con precios competitivos.">得益于台州成熟的洁具产业生态和完善的供应链体系，我们能够有效控制采购与生产成本，在确保产品质量的同时，为客户提供极具竞争力的报价。公司拥有200+款产品，远销南美、东欧、中东及非洲地区。</p>
+
             <div class="stat-grid">
+
                 <div class="stat-box"><div class="stat-num">20+</div><div class="stat-lbl" data-i18n data-zh="年行业深耕" data-en="Years" data-es="Años">年行业深耕</div></div>
+
                 <div class="stat-box"><div class="stat-num">200+</div><div class="stat-lbl" data-i18n data-zh="产品型号" data-en="Models" data-es="Modelos">产品型号</div></div>
+
                 <div class="stat-box"><div class="stat-num">4</div><div class="stat-lbl" data-i18n data-zh="大洲出口" data-en="Continents" data-es="Continentes">大洲出口</div></div>
+
                 <div class="stat-box"><div class="stat-num">100%</div><div class="stat-lbl" data-i18n data-zh="质检通过率" data-en="QC Pass" data-es="Control Calidad">质检通过率</div></div>
+
             </div>
+
         </div>
+
     </div>
+
 </section>
+
+
 
 <!-- ==================== CONTACT ==================== -->
+
 <section class="section section-alt" id="contact">
+
     <div class="container">
+
         <div class="section-head">
+
             <div class="section-badge" data-i18n data-zh="联系我们" data-en="Contact" data-es="Contacto">联系我们</div>
+
             <h2 class="section-title" data-i18n data-zh="期待与您合作" data-en="Let's Work Together" data-es="Trabajemos Juntos">期待与您合作</h2>
+
             <p class="section-desc" data-i18n
+
                data-zh="联系我们获取完整产品目录与报价，我们将在24小时内回复"
+
                data-en="Contact us for complete product catalog & quotation — we reply within 24 hours"
+
                data-es="Contáctenos para catálogo completo y cotización — respondemos en 24 horas">联系我们获取完整产品目录与报价，我们将在24小时内回复</p>
+
         </div>
+
         <div class="contact-grid">
+
             <div class="contact-box">
+
                 <h3 data-i18n data-zh="📋 联系方式" data-en="📋 Contact Information" data-es="📋 Información de Contacto">📋 联系方式</h3>
+
                 <div class="contact-row">
+
                     <div class="contact-icon-box">🏢</div>
+
                     <div class="contact-info">
+
                         <h5 data-i18n data-zh="公司" data-en="Company" data-es="Empresa">公司</h5>
+
                         <p data-i18n data-zh="台州路桥科源洁具有限公司" data-en="Taizhou Luqiao Keyuan Sanitary Ware" data-es="Taizhou Luqiao Keyuan Sanitary Ware">台州路桥科源洁具有限公司</p>
+
                     </div>
+
                 </div>
+
                 <div class="contact-row">
+
                     <div class="contact-icon-box">📍</div>
+
                     <div class="contact-info">
+
                         <h5 data-i18n data-zh="地址" data-en="Address" data-es="Dirección">地址</h5>
+
                         <p data-i18n
+
                            data-zh="浙江省台州市路桥区峰江街道园区中路88号工业园14幢"
+
                            data-en="Bldg 14, No.88 Yuanqu Middle Rd, Fengjiang St, Luqiao, Taizhou, Zhejiang, China"
+
                            data-es="Edif. 14, No.88 Yuanqu Middle Rd, Fengjiang, Luqiao, Taizhou, Zhejiang, China">浙江省台州市路桥区峰江街道园区中路88号工业园14幢</p>
+
                     </div>
+
                 </div>
+
                 <div class="contact-row">
+
                     <div class="contact-icon-box">📧</div>
+
                     <div class="contact-info">
+
                         <h5>Email</h5>
-                        <a href="mailto:NicoXie2001@gmail.com">NicoXie2001@gmail.com</a>
+
+                        <a href="mailto:NicoXie2001@gmail.com">NicoXie2001@gmail.com</a><br><a href="mailto:yyxsx01@163.com">yyxsx01@163.com</a>
+
                     </div>
+
                 </div>
+
                 <div class="contact-row">
+
                     <div class="contact-icon-box">💬</div>
+
                     <div class="contact-info">
+
                         <h5>WhatsApp</h5>
+
                         <a href="https://wa.me/8619550376943" target="_blank">+86 19550376943</a>
+
                     </div>
+
                 </div>
+
                 <a href="https://wa.me/8619550376943" target="_blank" class="wa-btn">
+
                     💬 <span data-i18n data-zh="WhatsApp 在线沟通" data-en="Chat on WhatsApp" data-es="Chatear por WhatsApp">WhatsApp 在线沟通</span>
+
                 </a>
+
             </div>
+
             <div class="contact-box">
+
                 <h3 data-i18n data-zh="📦 快速询价" data-en="📦 Quick Inquiry" data-es="📦 Consulta Rápida">📦 快速询价</h3>
+
                 <p style="color:var(--text-secondary);font-size:0.88rem;line-height:1.75;margin-bottom:16px;" data-i18n
+
                    data-zh="请通过邮件或WhatsApp告知您感兴趣的产品型号、预计采购量和目标市场，我们将尽快发送详细报价及产品目录。"
+
                    data-en="Please email or WhatsApp us with product models, estimated quantity & target market. We'll send quotation & catalog promptly."
+
                    data-es="Envíenos por email o WhatsApp los modelos, cantidad estimada y mercado objetivo. Le enviaremos cotización y catálogo.">请通过邮件或WhatsApp告知您感兴趣的产品型号、预计采购量和目标市场，我们将尽快发送详细报价及产品目录。</p>
+
                 <div style="background:var(--bg-alt);border-radius:var(--radius);padding:18px;">
+
                     <h4 style="font-size:0.88rem;font-weight:700;color:var(--primary);margin-bottom:10px;" data-i18n data-zh="我们可提供：" data-en="We Can Provide:" data-es="Podemos Ofrecer:">我们可提供：</h4>
+
                     <ul class="highlight-list">
+
                         <li>✓ <span data-i18n data-zh="完整产品画册（PDF）" data-en="Complete product catalog (PDF)" data-es="Catálogo completo (PDF)">完整产品画册（PDF）</span></li>
+
                         <li>✓ <span data-i18n data-zh="批发与零售报价单" data-en="Wholesale &amp; retail price lists" data-es="Listas de precios mayorista y minorista">批发与零售报价单</span></li>
+
                         <li>✓ <span data-i18n data-zh="详细规格参数表" data-en="Detailed specification sheets" data-es="Fichas técnicas detalladas">详细规格参数表</span></li>
+
                         <li>✓ <span data-i18n data-zh="免费样品（诚邀合作客户）" data-en="Free samples (serious buyers)" data-es="Muestras gratis (compradores serios)">免费样品（诚邀合作客户）</span></li>
+
                         <li>✓ <span data-i18n data-zh="定制包装与品牌服务" data-en="Custom packaging &amp; branding" data-es="Empaque y marca personalizados">定制包装与品牌服务</span></li>
+
                     </ul>
+
                 </div>
+
             </div>
+
         </div>
+
     </div>
+
 </section>
 
+
+
 <!-- ==================== FOOTER ==================== -->
+
 <footer class="footer">
+
     <div class="container">
+
         <p data-i18n
+
            data-zh="© 2025 台州市路桥科源洁具有限公司 版权所有"
+
            data-en="© 2025 Taizhou Luqiao Keyuan Sanitary Ware Co., Ltd. All Rights Reserved"
+
            data-es="© 2025 Taizhou Luqiao Keyuan Sanitary Ware Co., Ltd. Todos los Derechos Reservados">© 2025 台州市路桥科源洁具有限公司 版权所有</p>
+
     </div>
+
 </footer>
 
+
+
 <script>
+
 let currentLang='en';
+
 function switchLang(lang){
+
     currentLang=lang;
+
     document.documentElement.lang=lang==='zh'?'zh-CN':(lang==='es'?'es':'en');
+
     document.getElementById('lZh').classList.toggle('active',lang==='zh');
+
     document.getElementById('lEn').classList.toggle('active',lang==='en');
+
     document.getElementById('lEs').classList.toggle('active',lang==='es');
+
     document.querySelectorAll('[data-i18n]').forEach(el=>{
+
         const zh=el.getAttribute('data-zh'),en=el.getAttribute('data-en'),es=el.getAttribute('data-es');
+
         if(!zh||!en||!es)return;
+
         let target;
+
         if(lang==='zh')target=zh;
+
         else if(lang==='en')target=en;
+
         else target=es;
+
         if(target.includes('<'))el.innerHTML=target;else el.textContent=target;
+
     });
+
     localStorage.setItem('keyuan-lang',lang);
+
 }
+
 const saved=localStorage.getItem('keyuan-lang');
+
 if(saved){switchLang(saved);}else{switchLang('en');}
+
 window.addEventListener('scroll',()=>{document.getElementById('nav').classList.toggle('scrolled',window.scrollY>40)});
+
 document.querySelectorAll('a[href^="#"]').forEach(a=>{
+
     a.addEventListener('click',function(e){
+
         const t=document.querySelector(this.getAttribute('href'));
+
         if(t){e.preventDefault();window.scrollTo({top:t.offsetTop-72,behavior:'smooth'});document.getElementById('navLinks').classList.remove('open')}
+
     });
+
 });
+
 </script>
+
 </body>
+
 </html>
+
